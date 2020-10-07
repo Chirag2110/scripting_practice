@@ -1,0 +1,4 @@
+Duck	class-working.py	/^class Duck:$/
+Mclass-working.py	class-working.py	/^def main():$/
+quack	class-working.py	/^    def quack(self):$/
+walk	class-working.py	/^    def walk(self):$/
