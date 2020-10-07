@@ -1,0 +1,8 @@
+#ignore these files
+*.[oa]
+*.exe
+*.xml
+*.iml
+.idea/
+*~
+.*.swap
