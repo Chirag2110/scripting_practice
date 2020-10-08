@@ -41,6 +41,19 @@ def inclusive_range(*args):
         i += step
 
 
+def f1(f):
+    def f2():
+        print('this is before the function call')
+        f()
+        print('this is after function call')
+    return f2
+
+
+@f1
+def f3():
+    print('thi is f3')
+
+
 def main():
     """
     y = ['meow', 'grrr', 'purr']
@@ -52,6 +65,9 @@ def main():
     for i in inclusive_range(25):
         print(i, end=' ')
     print()
+    # decorator to check the behaviour comment out line 52
+    f3()
+
 
 
 if __name__ == '__main__':
