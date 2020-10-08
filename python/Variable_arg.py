@@ -46,12 +46,25 @@ def f1(f):
         print('this is before the function call')
         f()
         print('this is after function call')
+
     return f2
 
 
 @f1
 def f3():
     print('thi is f3')
+
+
+def print_list(o):
+    for x in o:
+        print(x, end=' ', flush=True)
+    print()
+
+
+def print_dict(o):
+    for k, v in o.items():
+        print("{} : {}".format(k, v), end=' ')
+    print()
 
 
 def main():
@@ -68,6 +81,19 @@ def main():
     # decorator to check the behaviour comment out line 52
     f3()
 
+    # list comprehension
+
+    from math import pi
+    seq = range(11)
+    print_list(seq)
+    seq2 = [x * 2 for x in seq]
+    print_list(seq2)
+    seq3 = [x for x in seq if x % 3 != 0]
+    print_list(seq3)
+    seq4 = [round(pi, x) for x in seq3]
+    print_list(seq4)
+    seq5 = {x: x ** 3 for x in seq3}
+    print_dict(seq5)
 
 
 if __name__ == '__main__':
