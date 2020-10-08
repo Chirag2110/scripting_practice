@@ -17,9 +17,41 @@ def kitten_dic(**kwargs):
         print('meow')
 
 
+def inclusive_range(*args):
+    nargs = len(args)
+    starts = 0
+    step = 1
+
+    # initialize parameters
+    if nargs < 1:
+        raise TabError(f'expected at least 1 argument, got {nargs}')
+    elif nargs == 1:
+        stop = args[0]
+    elif nargs == 2:
+        (starts, stop) = args
+    elif nargs == 3:
+        (starts, stop, step) = args
+    else:
+        raise TabError(f'expected at most 3 arguments, got {nargs}')
+
+    # generator
+    i = starts
+    while i <= stop:
+        yield i
+        i += step
+
+
 def main():
-    kitten('meow', 'grrr', 'purr')
-    kitten_dic(Buffy='meow', Zilla='grrr', Angel='purr')
+    """
+    y = ['meow', 'grrr', 'purr']
+    x = dict(Buffy='meow', Zilla='grrr', Angel='purr')
+    kitten(*y)
+    kitten_dic(**x)
+    """
+
+    for i in inclusive_range(25):
+        print(i, end=' ')
+    print()
 
 
 if __name__ == '__main__':
