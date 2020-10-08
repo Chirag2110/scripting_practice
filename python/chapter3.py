@@ -15,8 +15,18 @@ def compare(_a, _b):
         print("type of a and b both are same !")
 
 
+def compare_others(_a):
+    if type(_a) is list:
+        print("{} is of {}".format(_a, type(_a)))
+    # if isinstance(_a, file):
+    #    print("{} is of {}".format(_a, type(_a)))
+
+
 def main():
+    a_list = [a, b]
     compare(a, b)
+    compare_others(a_list)
+    compare_others('chapter2.py')
 
 
 if __name__ == '__main__':
